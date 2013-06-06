@@ -25,6 +25,9 @@ And yes, I made the shortcut for CoffeeScript ';'. I may relent.
 When you execute a JS command, we stay in JS mode, same for CoffeeScript and
 Commands.
 
+Also: Under consideration - change the prompt from '>' to reflect the current
+mode [{|;|:]
+
 ### Does the REPL include console output?
 
 There are 3 options:
