@@ -1,0 +1,9 @@
+# Editor junk
+/.project
+/.pydevproject
+/.settings/
+/.settings.xml
+/.settings.xml.old
+/.idea/
+/.externalToolBuilders/
+

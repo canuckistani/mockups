@@ -3,13 +3,15 @@
 
 Here's the basics of what I'm thinking. (Photoshopped)
 
-<img src="screen.png" width="1200px"/>
+<img src="screen.png"/>
 
 ## Questions
 
 ### CoffeeScript from day 1?
 
-Maybe not, but we might want it someday
+Maybe not, but we might want it someday. Also there are many other candidates
+for compile to JS languages that we could add here. CoffeeScript is just an
+initial example.
 
 ### How do you switch between JS/Coffee/Commands?
 
@@ -58,3 +60,37 @@ In order of importance:
 ### What happens to the input area in the console?
 
 It goes away. The console becomes a read-only 'Log' panel.
+
+### What would it look like with Position:Bottom
+
+This is how we'd hack JS while debugging ...
+
+<img src="screen2.png"/>
+
+I forgot to update the text in the "Position" drop-down. Shoot me.
+
+### To consider
+
+Could we get rid of the toolbar?
+The motivation for doing this: It keeps things clean and options are often just
+a crutch for developers failing to make a decision.
+
+Getting rid of the 'language' switch:
+The switch wouldn't be used that often, we could add some usage hints to the
+startup page.
+OTOH I think we need to be ultra-clear about the language that is being spoken
+and knowing how to switch is important too.
+
+Getting rid the 'Page Console Output' switch:
+Actually how much mess would we create by just adding *all* console output to
+the REPL? Also the button to toggle page console output is hard to get right -
+that's a clumsy name we've got there.
+
+Getting rid of the Position switch:
+Could we make do with 2 extra toolbar buttons, one which created a new floating
+REPL (not day 1) and the other which toggled a bottom-attached REPL. The tab
+based REPL would be toggleable via the options panel still.
+
+### How does completion work?
+
+That's next.
