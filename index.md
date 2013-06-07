@@ -192,15 +192,13 @@ following a ``⇥`` (i.e. what's printed on the TAB key)
 
 ``> wndow|`` <span style="color:#99F;">``⇥ window``</span>
 
-Options are presented inline, after the last output but before the command line
+Options are presented inline, below the input
 
-    > window.location.href
-    "http://en.wikipedia.org/wiki/Blink_element"
-     .--------------.
+    > set|Timeout
      | setTimeout   |
      | setInterval  |
      | setResizable |
-    > set|Timeout
+     '--------------'
 
 I know I'm using ASCII-art above but that's just lazyness. We don't have a
 fixation with text-only. This is The Web not some 80s teletype throwback disco.
@@ -219,15 +217,27 @@ shown filtered by things that match what has been typed so far
 If the user presses ``<CTRL>+R`` to start with then the full history is
 initially shown, and is then filtered as the user types.
 
-     .----------------------.
+    > <UP>
      | window.setTimeout    |
      | window               |
      | window.location.href |
      | setTimeout           |
-    > <UP>
+     '----------------------'
 
-     .----------------------.
+    > win<CTRL>+R
      | window.setTimeout    |
      | window               |
      | window.location.href |
-    > win<CTRL>+R
+     '----------------------'
+
+### What about multi-line input?
+
+Working ...
+
+Multi-line input is tricky because:
+
+* What does ``<RETURN>`` do: new-line or execute? And how does the user discover
+  how to do the other thing?
+* ``<UP>`` and ``<DOWN>`` can no longer be used for selecting options without
+  clashing.
+
