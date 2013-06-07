@@ -1,4 +1,3 @@
-
 # Mockup of a proposed REPL
 
 Here's the basics of what I'm thinking. (Photoshopped)
@@ -183,14 +182,15 @@ mental wiring for prefix-completion, in order:
 When there is a completion that is a suffix of what has been typed so far then
 it should be presented in a lighter color inline.
 
-> ``> window.setTim``<span style="text-decoration: blink;">|</span><span style="color:#999;">``eout``</span>
+``> window.setTim|``<span style="color:#99F;">``eout``</span>
 
-(The cursor is the '<span style="text-decoration: blink;">|</span>')
+(The cursor is the '``|``', and it looks a bit bizarre because Markdown.
+Imagine it looks better)
 
 When the completion is not a suffix it should be presented inline in full
 following a ``⇥`` (i.e. what's printed on the TAB key)
 
-> ``> wndow``<span style="text-decoration: blink;">|</span> <span style="color:#999;">``⇥ window``</span>
+``> wndow|`` <span style="color:#99F;">``⇥ window``</span>
 
 Options are presented inline, after the last output but before the command line
 
