@@ -9,7 +9,7 @@ Here's the basics of what I'm thinking. (Photoshopped)
 
 ### CoffeeScript from day 1?
 
-Maybe not, but we might want it someday. Also there are many other candidates
+Probably not, but we might want it someday. Also there are many other candidates
 for compile to JS languages that we could add here. CoffeeScript is just an
 initial example.
 
@@ -17,18 +17,29 @@ initial example.
 
 You can click the buttons in the toolbar or press magic keys.
 
-I expect the buttons might read like this:
+The buttons might read like this:
 
       [ JavaScript { | CoffeeScript ; | Command line : ]
 
 To give users the clue that you can also switch by pressing one of { ; or :
 And yes, I made the shortcut for CoffeeScript ';'. I may relent.
 
-When you execute a JS command, we stay in JS mode, same for CoffeeScript and
-Commands.
+If you're typing CoffeeScript (or anything other than JS) you expect:
+
+* To be able to get back to JS easily
+* To be able to continue typing CoffeeScript (etc) when you've pressed return
+  (CoffeeScript users would get *really* mad if we made them press ``;`` at the
+  start of every line)
+
+Getting back to JS with a ``{`` is easy and memorable, but not discoverable.
+The buttons make it much more discoverable.
 
 Also: Under consideration - change the prompt from '>' to reflect the current
 mode [{|;|:]
+
+There is an understandable move to get rid of the toolbar. If we are to do that
+then we need to solve the problem of discovering how to switch between
+languages.
 
 ### Does the REPL include console output?
 
@@ -38,10 +49,14 @@ There are 3 options:
 2. Yes, always
 3. Yes if the console.xxx command was typed in the REPL, not otherwise
 
-The 'Console' dropdown allows toggling between these 3.
-The default is 3. We're trying to draw a line between being clean and not
-confusing the heck out of people who type `console.log(foo);` and then can't
-work out where the output went.
+We're agreed that 1 isn't what most people want.
+
+Option 2 is simple, and the only sensible default if we're getting rid of the
+toolbar.
+
+Option 3 is hard to explain, certainly in the number of words that you would
+like in a user-interface. However it avoids chatty pages messing up a clean
+REPL. How often is this a problem in reality though?
 
 The Log panel includes console output from the REPL and the page, and allows
 for filtering by level.
@@ -93,4 +108,126 @@ based REPL would be toggleable via the options panel still.
 
 ### How does completion work?
 
-That's next.
+Our goal with completion is simply to speed the user up. This means:
+
+* Fewer keypresses
+* Minimum distraction
+* Maximum predictability
+
+Further, it means:
+
+* The user should be able to type 'long-hand' and completion never gets in the
+  way.
+
+There are some caveats to that:
+
+* ``<TAB>`` is special. Use ``\t`` (or similar) if you mean the TAB character
+
+This implies:
+
+* ``<LEFT>`` and ``<RIGHT>`` move the cursor rather than accepting completion
+* Keys that the user expects to do things should not be stolen by completion
+  i.e:
+
+      ``> window.screen<RETURN>``
+
+  Should do the obvious thing (inspect ``window.screen``) and not nothing.
+
+### What about prefix completion?
+
+Prefix completion is broken. It encourages you to start typing with what is
+probably the *most* ambiguous part of what you want to type. Commonly the
+right-most part of a parameter is both the least ambiguous and the thing you
+are thinking of when you're typing.
+
+Whatever your current directory, if your command-line was smart, it could
+probably work out what you meant by:
+
+    $ edit gDevTools.jsm
+
+And this is probably true even given several checkouts of central if you have
+access to someone's command history.
+
+Conceptually the same is true of JavaScript completion too:
+
+    > href
+
+Probably means ``window.location.href``.
+
+We're away off this kind of command line heaven, but not *that* far off.
+
+So a good model for completion that works however smart your completion system
+is is:
+
+* Let the user type, and present them with a best guess (select with ``<TAB>``)
+  and some alternatives (pick with ``<UP>``/``<DOWN>`` followed by ``<TAB>``)
+
+### But prefix completion is in my muscle memory
+
+I think we should do everything we can possibly can to help people who have
+mental wiring for prefix-completion, in order:
+
+* Ensure that our ``<TAB>`` completions are what people would expect if they
+  were clearly thinking of prefix completion. So ...
+
+      $ edit /Applica<TAB>
+
+  should complete to ``edit /Applications/``
+
+* Allow a key sequence like ``<SHIFT>+<TAB>`` to do true prefix completion
+* If people complain in significant numbers, then offer an option to change
+  back
+
+### How are completions presented
+
+When there is a completion that is a suffix of what has been typed so far then
+it should be presented in a lighter color inline.
+
+> ``> window.setTim``<span style="text-decoration: blink;">|</span><span style="color:#999;">``eout``</span>
+
+(The cursor is the '<span style="text-decoration: blink;">|</span>')
+
+When the completion is not a suffix it should be presented inline in full
+following a ``⇥`` (i.e. what's printed on the TAB key)
+
+> ``> wndow``<span style="text-decoration: blink;">|</span> <span style="color:#999;">``⇥ window``</span>
+
+Options are presented inline, after the last output but before the command line
+
+    > window.location.href
+    "http://en.wikipedia.org/wiki/Blink_element"
+     .--------------.
+     | setTimeout   |
+     | setInterval  |
+     | setResizable |
+    > set|Timeout
+
+I know I'm using ASCII-art above but that's just lazyness. We don't have a
+fixation with text-only. This is The Web not some 80s teletype throwback disco.
+
+Having a horizontal menu is nice in that it takes up unused real-estate, but
+it's confusing to navigate when ``<LEFT>`` and ``<RIGHT>`` are reserved for the
+cursor, so our menus are vertical with a maximum of 5 options.
+
+### What about history?
+
+With an empty command line, ``<UP>`` and ``<DOWN>`` navigate through history.
+
+If the user has started to type and then presses ``<CTRL>+R`` the history is
+shown filtered by things that match what has been typed so far
+
+If the user presses ``<CTRL>+R`` to start with then the full history is
+initially shown, and is then filtered as the user types.
+
+     .----------------------.
+     | window.setTimeout    |
+     | window               |
+     | window.location.href |
+     | setTimeout           |
+    > <UP>
+
+     .----------------------.
+     | window.setTimeout    |
+     | window               |
+     | window.location.href |
+    > win<CTRL>+R
