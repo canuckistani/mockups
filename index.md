@@ -1,8 +1,19 @@
-# Mockup of a proposed REPL
+# Mockup of a proposed Terminal
+
+A lot of this is about how the Terminal functions, but it also touches the
+larger toolbox, so we'll need to make sure it fits with Shorlanders plans
+([Latest?][1])
 
 Here's the basics of what I'm thinking. (Photoshopped)
 
-<img src="screen.png"/>
+<img src="screen3.png"/>
+
+If you remember previous iterations:
+* The toolbar is gone
+* The panel names have changed to 'Terminal' and 'Logging'
+* There is a new toolbar button
+
+[1]: http://people.mozilla.com/~shorlander/files/devtools/creation/devtools-creation-i01.html
 
 ## Questions
 
@@ -14,59 +25,53 @@ initial example.
 
 ### How do you switch between JS/Coffee/Commands?
 
-You can click the buttons in the toolbar or press magic keys.
+Most people won't need to do this regularly.
 
-The buttons might read like this:
+There will be a 'lang' command that allows you to change between languages.
+Initially the only options will be javascript and command, but we can add
+coffee, etc.
 
-      [ JavaScript { | CoffeeScript ; | Command line : ]
+Also in javascript mode, you can access commands by prefixing with a ':'.
 
-To give users the clue that you can also switch by pressing one of { ; or :
-And yes, I made the shortcut for CoffeeScript ';'. I may relent.
+### Does the terminal include console output?
 
-If you're typing CoffeeScript (or anything other than JS) you expect:
+The terminal will initially include:
 
-* To be able to get back to JS easily
-* To be able to continue typing CoffeeScript (etc) when you've pressed return
-  (CoffeeScript users would get *really* mad if we made them press ``;`` at the
-  start of every line)
+* console output both from the page and from the terminal
+* uncaught exceptions
 
-Getting back to JS with a ``{`` is easy and memorable, but not discoverable.
-The buttons make it much more discoverable.
+The same messages will also be available in the Logging panel, however by
+default they will be turned off there. (Are we sure about this?)
 
-Also: Under consideration - change the prompt from '>' to reflect the current
-mode [{|;|:]
+If experience shows that we need to, we may add a command to filter the
+displayed output:
 
-There is an understandable move to get rid of the toolbar. If we are to do that
-then we need to solve the problem of discovering how to switch between
-languages.
+    : terminal show --console [yes|no|terminal]
+    : terminal show --exceptions [yes|no|terminal]
 
-### Does the REPL include console output?
+Or something. The exact syntax isn't important unless we're doing this in day 1.
 
-There are 3 options:
+### What about the prompt
 
-1. No, never
-2. Yes, always
-3. Yes if the console.xxx command was typed in the REPL, not otherwise
+We've a number of ideas for prompts. I am currently proposing that we use a
+simple > for all languages, and indicate the current language in the icon for
+the terminal (see the screenshot above)
 
-We're agreed that 1 isn't what most people want.
+We have discussed having the language as part of the prompt either as a symbol
+or a name like:
 
-Option 2 is simple, and the only sensible default if we're getting rid of the
-toolbar.
+    JS>
 
-Option 3 is hard to explain, certainly in the number of words that you would
-like in a user-interface. However it avoids chatty pages messing up a clean
-REPL. How often is this a problem in reality though?
+However I think this is likely to be extremely repetitive. So long as people
+can see the language they are in in the icon they'll be OK. (Perhaps people
+should get a reminder in the motd when they first open the terminal)
 
-The Log panel includes console output from the REPL and the page, and allows
-for filtering by level.
+### What Terminal positions are available?
 
-### What REPL positions are available?
-
-2 or 3 or 4.
-In order of importance:
+Initially 2 positions are available
 
 * 'Tab' is what you see.
-* 'Below' is attached the the bottom of the toolbox. The REPL is no longer
+* 'Below' is attached the the bottom of the toolbox. The Terminal is no longer
   available as a Tab when attached to the bottom
 * 'Detached' (probably not day 1)
 * 'Side' (probably not day 1) For widescreen monitor use
@@ -78,6 +83,8 @@ It goes away. The console becomes a read-only 'Log' panel.
 ### What would it look like with Position:Bottom
 
 This is how we'd hack JS while debugging ...
+
+TODO: This needs updating
 
 <img src="screen2.png"/>
 
@@ -97,13 +104,13 @@ and knowing how to switch is important too.
 
 Getting rid the 'Page Console Output' switch:
 Actually how much mess would we create by just adding *all* console output to
-the REPL? Also the button to toggle page console output is hard to get right -
-that's a clumsy name we've got there.
+the Terminal? Also the button to toggle page console output is hard to get
+right - that's a clumsy name we've got there.
 
 Getting rid of the Position switch:
 Could we make do with 2 extra toolbar buttons, one which created a new floating
-REPL (not day 1) and the other which toggled a bottom-attached REPL. The tab
-based REPL would be toggleable via the options panel still.
+Terminal (not day 1) and the other which toggled a bottom-attached Terminal.
+The tab based Terminal would be toggleable via the options panel still.
 
 ### How does completion work?
 
@@ -128,7 +135,7 @@ This implies:
 * Keys that the user expects to do things should not be stolen by completion
   i.e:
 
-      ``> window.screen<RETURN>``
+      ``{ window.screen<RETURN>``
 
   Should do the obvious thing (inspect ``window.screen``) and not nothing.
 
@@ -142,14 +149,14 @@ are thinking of when you're typing.
 Whatever your current directory, if your command-line was smart, it could
 probably work out what you meant by:
 
-    $ edit gDevTools.jsm
+    : edit gDevTools.jsm
 
 And this is probably true even given several checkouts of central if you have
 access to someone's command history.
 
 Conceptually the same is true of JavaScript completion too:
 
-    > href
+    { href
 
 Probably means ``window.location.href``.
 
@@ -169,7 +176,7 @@ mental wiring for prefix-completion, in order:
 * Ensure that our ``<TAB>`` completions are what people would expect if they
   were clearly thinking of prefix completion. So ...
 
-      $ edit /Applica<TAB>
+      ``: edit /Applica<TAB>``
 
   should complete to ``edit /Applications/``
 
@@ -182,7 +189,7 @@ mental wiring for prefix-completion, in order:
 When there is a completion that is a suffix of what has been typed so far then
 it should be presented in a lighter color inline.
 
-``> window.setTim|``<span style="color:#99F;">``eout``</span>
+``{ window.setTim|``<span style="color:#99F;">``eout``</span>
 
 (The cursor is the '``|``', and it looks a bit bizarre because Markdown.
 Imagine it looks better)
@@ -190,11 +197,28 @@ Imagine it looks better)
 When the completion is not a suffix it should be presented inline in full
 following a ``⇥`` (i.e. what's printed on the TAB key)
 
-``> wndow|`` <span style="color:#99F;">``⇥ window``</span>
+``{ wndow|`` <span style="color:#99F;">``⇥ window``</span>
+
+When the cursor isn't at the end of the input the same applies
+
+``{ wn|dow`` <span style="color:#99F;">``⇥ window``</span>
+
+The completion proposal should always be appropriate to where the cursor is
+however:
+
+``{ wn|dow.setTime`` <span style="color:#99F;">``⇥ window``</span>
+
+``{ wndow.setTime|`` <span style="color:#99F;">``⇥ setTimeout``</span>
+
+Some of this could be hard to code (particularly the last one) so it's OK to
+keep things simple by only attempting completion proposals when the cursor is
+at the end of the input.
+
+### What if there is more than one completion option?
 
 Options are presented inline, below the input
 
-    > set|Timeout
+    { set|Timeout
      | setTimeout   |
      | setInterval  |
      | setResizable |
@@ -217,14 +241,14 @@ shown filtered by things that match what has been typed so far
 If the user presses ``<CTRL>+R`` to start with then the full history is
 initially shown, and is then filtered as the user types.
 
-    > <UP>
+    { <UP>
      | window.setTimeout    |
      | window               |
      | window.location.href |
      | setTimeout           |
      '----------------------'
 
-    > win<CTRL>+R
+    { win<CTRL>+R
      | window.setTimeout    |
      | window               |
      | window.location.href |
