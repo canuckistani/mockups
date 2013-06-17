@@ -28,8 +28,8 @@ initial example.
 Most people won't need to do this regularly.
 
 There will be a 'lang' command that allows you to change between languages.
-Initially the only options will be javascript and command, but we can add
-coffee, etc.
+Initially the only options will be 'javascript' and 'command', but we can add
+'coffee', etc.
 
 Also in javascript mode, you can access commands by prefixing with a ':'.
 
@@ -40,14 +40,19 @@ The terminal will initially include:
 * console output both from the page and from the terminal
 * uncaught exceptions
 
-The same messages will also be available in the Logging panel, however by
-default they will be turned off there. (Are we sure about this?)
+These messages will also be available in the Logging panel, however by default
+they will be turned off there.
+
+The terminal will not include:
+
+* XHR requests
+* Errors/warnings from CSS/XUL/chrome/etc
 
 If experience shows that we need to, we may add a command to filter the
 displayed output:
 
-    : terminal show --console [yes|no|terminal]
-    : terminal show --exceptions [yes|no|terminal]
+    ﹥ terminal show --console [yes|no|terminal]
+    ﹥ terminal show --exceptions [yes|no|terminal]
 
 Or something. The exact syntax isn't important unless we're doing this in day 1.
 
@@ -57,60 +62,41 @@ We've a number of ideas for prompts. I am currently proposing that we use a
 simple > for all languages, and indicate the current language in the icon for
 the terminal (see the screenshot above)
 
+(Note, I've used ﹥ in this document because > is special to Markdown)
+
 We have discussed having the language as part of the prompt either as a symbol
 or a name like:
 
     JS>
 
 However I think this is likely to be extremely repetitive. So long as people
-can see the language they are in in the icon they'll be OK. (Perhaps people
-should get a reminder in the motd when they first open the terminal)
+can see the language in the icon and have a reminder in the MOTD they'll be OK.
+
+### What is the MOTD?
+
+Something like:
+
+      // Welcome to the JavaScript terminal. Type ':help' for help
+    ﹥
+
+Clearly the message would change if the current language was Coffeescript etc.
 
 ### What Terminal positions are available?
 
 Initially 2 positions are available
 
-* 'Tab' is what you see.
-* 'Below' is attached the the bottom of the toolbox. The Terminal is no longer
-  available as a Tab when attached to the bottom
-* 'Detached' (probably not day 1)
-* 'Side' (probably not day 1) For widescreen monitor use
+* 'Tab' is what you see in the graphic above.
+* 'Below' is attached the the bottom of the toolbox. The Terminal tab is no
+  longer available when attached to the bottom
+
+Later revisions may enable detachable or side docked positions.
+
+The position is selected using an toggle button in the toolbar (next to the
+buttons for paint flashing, tilt, etc)
 
 ### What happens to the input area in the console?
 
 It goes away. The console becomes a read-only 'Log' panel.
-
-### What would it look like with Position:Bottom
-
-This is how we'd hack JS while debugging ...
-
-TODO: This needs updating
-
-<img src="screen2.png"/>
-
-I forgot to update the text in the "Position" drop-down. Shoot me.
-
-### To consider
-
-Could we get rid of the toolbar?
-The motivation for doing this: It keeps things clean and options are often just
-a crutch for developers failing to make a decision.
-
-Getting rid of the 'language' switch:
-The switch wouldn't be used that often, we could add some usage hints to the
-startup page.
-OTOH I think we need to be ultra-clear about the language that is being spoken
-and knowing how to switch is important too.
-
-Getting rid the 'Page Console Output' switch:
-Actually how much mess would we create by just adding *all* console output to
-the Terminal? Also the button to toggle page console output is hard to get
-right - that's a clumsy name we've got there.
-
-Getting rid of the Position switch:
-Could we make do with 2 extra toolbar buttons, one which created a new floating
-Terminal (not day 1) and the other which toggled a bottom-attached Terminal.
-The tab based Terminal would be toggleable via the options panel still.
 
 ### How does completion work?
 
@@ -133,13 +119,19 @@ This implies:
 
 * ``<LEFT>`` and ``<RIGHT>`` move the cursor rather than accepting completion
 * Keys that the user expects to do things should not be stolen by completion
-  i.e:
+  i.e, if the user types ``window.screen<RETURN>``, then just before
+  ``<RETURN>`` is pressed, the user sees:
 
-      ``{ window.screen<RETURN>``
+        ﹥ window.screen
+               | screen   |
+               | screenX  |
+               | screenY  |
+               '----------'
 
-  Should do the obvious thing (inspect ``window.screen``) and not nothing.
+  Pressing return executes ``window.screen`` rather than making a selection
+  from the menu.
 
-### What about prefix completion?
+### Prefix completion
 
 Prefix completion is broken. It encourages you to start typing with what is
 probably the *most* ambiguous part of what you want to type. Commonly the
@@ -149,14 +141,11 @@ are thinking of when you're typing.
 Whatever your current directory, if your command-line was smart, it could
 probably work out what you meant by:
 
-    : edit gDevTools.jsm
-
-And this is probably true even given several checkouts of central if you have
-access to someone's command history.
+    ﹥ edit gDevTools.jsm
 
 Conceptually the same is true of JavaScript completion too:
 
-    { href
+    ﹥ href
 
 Probably means ``window.location.href``.
 
@@ -176,7 +165,7 @@ mental wiring for prefix-completion, in order:
 * Ensure that our ``<TAB>`` completions are what people would expect if they
   were clearly thinking of prefix completion. So ...
 
-      ``: edit /Applica<TAB>``
+        ﹥ edit /Applica<TAB>
 
   should complete to ``edit /Applications/``
 
@@ -186,29 +175,29 @@ mental wiring for prefix-completion, in order:
 
 ### How are completions presented
 
-When there is a completion that is a suffix of what has been typed so far then
-it should be presented in a lighter color inline.
+When there is a completion that is a *suffix* of what has been typed so far
+then it should be presented in a lighter color inline.
 
-``{ window.setTim|``<span style="color:#99F;">``eout``</span>
+    ﹥ window.setTim|eout
 
-(The cursor is the '``|``', and it looks a bit bizarre because Markdown.
-Imagine it looks better)
+(The cursor is the '``|``', we need a blink tag. Also, imagine that ``eout``
+is in a lighter color)
 
 When the completion is not a suffix it should be presented inline in full
 following a ``⇥`` (i.e. what's printed on the TAB key)
 
-``{ wndow|`` <span style="color:#99F;">``⇥ window``</span>
+    ﹥ wndow| ⇥ window
 
 When the cursor isn't at the end of the input the same applies
 
-``{ wn|dow`` <span style="color:#99F;">``⇥ window``</span>
+    ﹥ wn|dow ⇥ window
 
 The completion proposal should always be appropriate to where the cursor is
 however:
 
-``{ wn|dow.setTime`` <span style="color:#99F;">``⇥ window``</span>
+    ﹥ wn|dow.setTime ⇥ window
 
-``{ wndow.setTime|`` <span style="color:#99F;">``⇥ setTimeout``</span>
+    ﹥ wndow.setTi|me ⇥ setTimeout
 
 Some of this could be hard to code (particularly the last one) so it's OK to
 keep things simple by only attempting completion proposals when the cursor is
@@ -218,7 +207,7 @@ at the end of the input.
 
 Options are presented inline, below the input
 
-    { set|Timeout
+    ﹥ set|Timeout
      | setTimeout   |
      | setInterval  |
      | setResizable |
@@ -241,14 +230,14 @@ shown filtered by things that match what has been typed so far
 If the user presses ``<CTRL>+R`` to start with then the full history is
 initially shown, and is then filtered as the user types.
 
-    { <UP>
+    ﹥ <UP>
      | window.setTimeout    |
      | window               |
      | window.location.href |
      | setTimeout           |
      '----------------------'
 
-    { win<CTRL>+R
+    ﹥ win<CTRL>+R
      | window.setTimeout    |
      | window               |
      | window.location.href |
@@ -256,12 +245,18 @@ initially shown, and is then filtered as the user types.
 
 ### What about multi-line input?
 
-Working ...
+Multi-line input attempts to make the terminal act more like an editor. This
+has a number of complications:
 
-Multi-line input is tricky because:
+* How do you differentiate between new-line and execute (both of which would
+  traditionally use ``<RETURN>``?
+* Do we support code indenting using the ``<TAB>`` key?
+* Do we allow the ``<UP>`` and ``<DOWN>`` keys to select alternative options
+  when the user may expect cursor movement.
 
-* What does ``<RETURN>`` do: new-line or execute? And how does the user discover
-  how to do the other thing?
-* ``<UP>`` and ``<DOWN>`` can no longer be used for selecting options without
-  clashing.
+We will use ``<SHIFT>+<RETURN>`` to enter multi-line edit mode, and to execute
+the command (a.k.a exit from multi-line edit mode)
 
+In keeping with common use in text editors we will not have automatic
+completion but will rely on the user pressing ``<CTRL>+<SPACE>`` in order to
+request hints.
