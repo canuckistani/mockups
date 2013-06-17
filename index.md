@@ -98,6 +98,59 @@ buttons for paint flashing, tilt, etc)
 
 It goes away. The console becomes a read-only 'Log' panel.
 
+### How does object inspection work
+
+In Javascript mode, return values are displayed using comment characters
+much like JSTerm.
+
+For simple numbers/booleans that can be inlined:
+
+        ﹥ 1 + 1<RETURN>
+              ↓
+          1 + 1 // 2
+        ﹥
+
+And:
+
+        ﹥ window == null<RETURN>
+              ↓
+          window == null // false
+        ﹥
+
+And for strings:
+
+        ﹥ window.location.href<RETURN>
+              ↓
+          window.location.href // "https://github.com/joewalker/repl/blob/master/index.md"
+        ﹥
+
+Or when simple values can't be inlined:
+
+        ﹥ 'Hello,\nWorld!'<RETURN>
+              ↓
+          'Hello,\nWorld!'
+          /*
+          "Hello,
+          World"
+          */
+        ﹥
+
+For JS objects we will provide an inspector:
+
+        ﹥ window<RETURN>
+              ↓
+          window
+          /*
+          [object Window] [Inspect]
+          */
+        ﹥
+
+Object inspection will use the Debugger inspector docked to the right side of
+the terminal. Since this is a graphical inspector, the [Inspect] button will
+be an HTML buttons rather than an ACSII ``[+]``.
+
+For command output, values will not use comments and will not be inlined.
+
 ### How does completion work?
 
 Our goal with completion is simply to speed the user up. This means:
