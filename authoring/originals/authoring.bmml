@@ -1,0 +1,170 @@
+<mockup version="1.0" skin="sketch" fontFace="Balsamiq Sans" measuredW="786" measuredH="3918" mockupW="642" mockupH="3748">
+  <controls>
+    <control controlID="0" controlTypeID="com.balsamiq.mockups::TabBar" x="144" y="170" w="642" h="540" measuredW="401" measuredH="100" zOrder="0" locked="false" isInGroup="-1">
+      <controlProperties>
+        <selectedIndex>4</selectedIndex>
+        <text>%u274B%2C%20Terminal%2C%20Inspector%2C%20Debugger%2C%20Style%20Editor%2C%20Profiler</text>
+      </controlProperties>
+    </control>
+    <control controlID="2" controlTypeID="com.balsamiq.mockups::MenuBar" x="144" y="192" w="642" h="29" measuredW="136" measuredH="29" zOrder="1" locked="false" isInGroup="-1">
+      <controlProperties>
+        <text>New%2C%20Import...</text>
+      </controlProperties>
+    </control>
+    <control controlID="6" controlTypeID="com.balsamiq.mockups::Menu" x="144" y="219" w="169" h="-1" measuredW="150" measuredH="146" zOrder="2" locked="false" isInGroup="-1">
+      <controlProperties>
+        <text>o%20*style.css*%0A432%20rules%2CSave%0A---%0Ao%20*more.css*%0A71%20rules%2C%20Save%0A---%0Ao%20*evenmore.css*%0A1243%20rules%2C%20Save</text>
+      </controlProperties>
+    </control>
+    <control controlID="10" controlTypeID="com.balsamiq.mockups::HSplitter" x="311" y="221" w="-1" h="489" measuredW="11" measuredH="100" zOrder="3" locked="false" isInGroup="-1"/>
+    <control controlID="11" controlTypeID="com.balsamiq.mockups::Paragraph" x="322" y="221" w="464" h="489" measuredW="200" measuredH="80" zOrder="4" locked="false" isInGroup="-1">
+      <controlProperties>
+        <text>/*%20This%20Source%20Code%20Form%20is%20subject%20to%20the%20terms%20of%20the%20Mozilla%20Public%0A%20*%20License%2C%20v.%202.0.%20If%20a%20copy%20of%20the%20MPL%20was%20not%20distributed%20with%20this%0A%20*%20file%2C%20You%20can%20obtain%20one%20at%20http%3A//mozilla.org/MPL/2.0/.%20*/%0A%20%0A.devtools-tab%20%3E%20.radio-check%2C%0A.devtools-tab%20%3E%20.radio-check-box1%2C%0A.devtools-tab%20%3E%20.radio-spacer-box%20%7B%0A%20%20display%3A%20none%3B%0A%7D%0A%20%0A%23toolbox-controls%20%3E%20toolbarbutton%20%3E%20.toolbarbutton-text%2C%0A%23toolbox-dock-buttons%20%3E%20toolbarbutton%20%3E%20.toolbarbutton-text%2C%0A.command-button%20%3E%20.toolbarbutton-text%20%7B%0A%20%20display%3A%20none%3B%0A%7D%0A%20%0A%23options-panel-container%20%7B%0A%20%20overflow%3A%20auto%3B%0A%7D%0A%20%0A%23options-panel%20%7B%0A%20%20overflow-y%3A%20auto%3B%0A%20%20display%3A%20block%3B%0A%7D%0A%20%0A.options-vertical-pane%20%7B%0A%20%20display%3A%20inline%3B%0A%20%20float%3A%20left%3B%0A%7D%0A%20%0A.options-vertical-pane%20%3E%20label%20%7B%0A%20%20display%3A%20block%3B%0A%7D</text>
+      </controlProperties>
+    </control>
+    <control controlID="12" controlTypeID="com.balsamiq.mockups::TabBar" x="144" y="1423" w="642" h="540" measuredW="368" measuredH="100" zOrder="5" locked="false" isInGroup="-1">
+      <controlProperties>
+        <selectedIndex>4</selectedIndex>
+        <text>%u274B%2C%20Terminal%2C%20Inspector%2C%20Debugger%2C%20Editor%2C%20Profiler</text>
+      </controlProperties>
+    </control>
+    <control controlID="13" controlTypeID="com.balsamiq.mockups::MenuBar" x="144" y="1934" w="169" h="29" measuredW="136" measuredH="29" zOrder="6" locked="false" isInGroup="-1">
+      <controlProperties>
+        <text>New%2C%20Import...</text>
+      </controlProperties>
+    </control>
+    <control controlID="14" controlTypeID="com.balsamiq.mockups::Menu" x="144" y="1446" w="169" h="-1" measuredW="150" measuredH="240" zOrder="7" locked="false" isInGroup="-1">
+      <controlProperties>
+        <text>%20*index.html*%0A5474%20nodes%2CSave%0A---%0Ao%20*style.css*%0A432%20rules%2CSave%0A---%0Ao%20*more.css*%0A71%20rules%2C%20Save%0A---%0Ao%20*evenmore.css*%0A1243%20rules%2C%20Save%0A---%0A%20*actions.js*%0A234%20functions%2C%20Save</text>
+      </controlProperties>
+    </control>
+    <control controlID="15" controlTypeID="com.balsamiq.mockups::HSplitter" x="311" y="1446" w="-1" h="517" measuredW="11" measuredH="100" zOrder="8" locked="false" isInGroup="-1"/>
+    <control controlID="16" controlTypeID="com.balsamiq.mockups::Paragraph" x="322" y="1446" w="464" h="517" measuredW="200" measuredH="80" zOrder="9" locked="false" isInGroup="-1">
+      <controlProperties>
+        <text>%20%20%20%20%3C%21--%20The%20output%20from%20%23templateProperty%20%28below%29%20is%20appended%20here.%20--%3E%0A%20%20%20%20%3Cdiv%20id%3D%22propertyContainer%22%20class%3D%22devtools-monospace%22%3E%0A%20%20%20%20%3C/div%3E%0A%20%0A%20%20%20%20%3C%21--%20When%20no%20properties%20are%20found%20the%20following%20block%20is%20displayed.%20--%3E%0A%20%20%20%20%3Cdiv%20id%3D%22noResults%22%20hidden%3D%22%22%3E%0A%20%20%20%20%20%20%26noPropertiesFound%3B%0A%20%20%20%20%3C/div%3E%0A%20%0A%20%20%20%20%3C%21--%20The%20output%20from%20%23templateRoot%20%28below%29%20is%20inserted%20here.%20--%3E%0A%20%20%20%20%3Cdiv%20id%3D%22root%22%20class%3D%22devtools-monospace%22%3E%3C/div%3E%0A%20%0A%20%20%20%20%3C%21--%0A%20%20%20%20To%20visually%20debug%20the%20templates%20without%20running%20firefox%2C%20alter%20the%20display%3Anone%0A%20%20%20%20--%3E%0A%20%20%20%20%3Cdiv%20style%3D%22display%3Anone%3B%22%3E%0A%20%20%20%20%20%20%3C%21--%0A%20%20%20%20%20%20templateRoot%20sits%20at%20the%20top%20of%20the%20window%20and%20contains%20the%20%22include%20default%0A%20%20%20%20%20%20styles%22%20checkbox.%20For%20data%20it%20needs%20an%20instance%20of%20CssHtmlTree.%0A%20%20%20%20%20%20--%3E%0A%20%20%20%20%20%20%3Cdiv%20id%3D%22templateRoot%22%3E%0A%20%20%20%20%20%20%20%20%3Cxul%3Ahbox%20class%3D%22devtools-toolbar%22%20flex%3D%221%22%20align%3D%22center%22%3E%0A%20%20%20%20%20%20%20%20%20%20%3Cxul%3Acheckbox%20class%3D%22includebrowserstyles%22%0A%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20save%3D%22%24%7BincludeBrowserStylesCheckbox%7D%22%0A%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20oncommand%3D%22%24%7BincludeBrowserStylesChanged%7D%22%20checked%3D%22false%22%0A%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20label%3D%22%26browserStylesLabel%3B%22/%3E%0A%20%20%20%20%20%20%20%20%20%20%3Cxul%3Atextbox%20class%3D%22devtools-searchinput%22%20type%3D%22search%22%20save%3D%22%24%7BsearchField%7D%22%0A%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20placeholder%3D%22%26userStylesSearch%3B%22%20flex%3D%221%22%0A%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20oncommand%3D%22%24%7BfilterChanged%7D%22/%3E%0A%20%20%20%20%20%20%20%20%3C/xul%3Ahbox%3E%0A%20%20%20%20%20%20%3C/div%3E%0A%20%0A%20%0A%20%20%20%20%20%20%3C%21--%0A%20%20%20%20%20%20A%20templateMatchedSelectors%20sits%20inside%20each%20templateProperties%20showing%20the%0A%20%20%20%20%20%20list%20of%20selectors%20that%20affect%20that%20property.%20Each%20needs%20data%20like%20this%3A%0A%20%20%20%20%20%20%7B%0A%20%20%20%20%20%20%20%20matchedSelectorViews%3A%20...%2C%20//%20from%20cssHtmlTree.propertyViews%5Bname%5D.matchedSelectorViews%0A%20%20%20%20%20%20%7D%0A%20%20%20%20%20%20This%20is%20a%20template%20so%20the%20parent%20does%20not%20need%20to%20be%20a%20table%2C%20except%20that%0A%20%20%20%20%20%20using%20a%20div%20as%20the%20parent%20causes%20the%20DOM%20to%20muck%20with%20the%20tr%20elements%0A%20%20%20%20%20%20--%3E%0A%20%20%20%20%20%20%3Cdiv%20id%3D%22templateMatchedSelectors%22%3E%0A%20%20%20%20%20%20%20%20%3Cloop%20foreach%3D%22selector%20in%20%24%7BmatchedSelectorViews%7D%22%3E%0A%20%20%20%20%20%20%20%20%20%20%3Cp%3E%0A%20%20%20%20%20%20%20%20%20%20%20%20%3Cspan%20class%3D%22rule-link%22%3E%0A%20%20%20%20%20%20%20%20%20%20%20%20%20%20%3Ca%20target%3D%22_blank%22%20class%3D%22link%20theme-link%22%0A%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20onclick%3D%22%24%7Bselector.openStyleEditor%7D%22%0A%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20onkeydown%3D%22%24%7Bselector.maybeOpenStyleEditor%7D%22%0A%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20title%3D%22%24%7Bselector.selectorInfo.href%7D%22%0A%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20tabindex%3D%220%22%3E%24%7Bselector.selectorInfo.source%7D%3C/a%3E%0A%20%20%20%20%20%20%20%20%20%20%20%20%3C/span%3E%0A%20%20%20%20%20%20%20%20%20%20%20%20%3Cspan%20dir%3D%22ltr%22%20class%3D%22rule-text%20%24%7Bselector.statusClass%7D%20theme-fg-color3%22%20title%3D%22%24%7Bselector.statusText%7D%22%3E%0A%20%20%20%20%20%20%20%20%20%20%20%20%20%20%24%7Bselector.text%28__element%29%7D%0A%20%20%20%20%20%20%20%20%20%20%20%20%20%20%3Cspan%20class%3D%22other-property-value%20theme-fg-color1%22%3E%24%7Bselector.selectorInfo.value%7D%3C/span%3E%0A%20%20%20%20%20%20%20%20%20%20%20%20%3C/span%3E%0A%20%20%20%20%20%20%20%20%20%20%3C/p%3E%0A%20%20%20%20%20%20%20%20%3C/loop%3E%0A%20%20%20%20%20%20%3C/div%3E%0A%20%20%20%20%3C/div%3E%0A%20%0A%20%20%3C/body%3E%0A%3C/html%3E</text>
+      </controlProperties>
+    </control>
+    <control controlID="17" controlTypeID="com.balsamiq.mockups::ModalScreen" x="146" y="219" w="161" h="50" measuredW="320" measuredH="240" zOrder="10" locked="false" isInGroup="-1"/>
+    <control controlID="18" controlTypeID="com.balsamiq.mockups::ModalScreen" x="144" y="1446" w="169" h="50" measuredW="320" measuredH="240" zOrder="11" locked="false" isInGroup="-1"/>
+    <control controlID="19" controlTypeID="com.balsamiq.mockups::TabBar" x="144" y="813" w="642" h="540" measuredW="401" measuredH="100" zOrder="12" locked="false" isInGroup="-1">
+      <controlProperties>
+        <selectedIndex>2</selectedIndex>
+        <text>%u274B%2C%20Terminal%2C%20Inspector%2C%20Debugger%2C%20Style%20Editor%2C%20Profiler</text>
+      </controlProperties>
+    </control>
+    <control controlID="20" controlTypeID="com.balsamiq.mockups::MenuBar" x="144" y="837" w="642" h="29" measuredW="366" measuredH="29" zOrder="13" locked="false" isInGroup="-1">
+      <controlProperties>
+        <text>%5C%5B%5C%5C%5D%2C%20%3C%2C%20div%2C%20div%2C%20table%2C%20tr%2C%20td%2C%20span%2C%20%3E</text>
+      </controlProperties>
+    </control>
+    <control controlID="24" controlTypeID="com.balsamiq.mockups::ModalScreen" x="144" y="881" w="370" h="31" measuredW="320" measuredH="240" zOrder="15" locked="false" isInGroup="-1"/>
+    <control controlID="25" controlTypeID="com.balsamiq.mockups::Paragraph" x="144" y="864" w="445" h="489" measuredW="200" measuredH="80" zOrder="14" locked="false" isInGroup="-1">
+      <controlProperties>
+        <text>%20%20%20%20%3E%20%3Cdiv%20id%3D%22propertyContainer%22%20class%3D%22devtools-monospace%22%3E%20%0A%20%20%20%20%3E%20%3Cdiv%20id%3D%22noResults%22%20hidden%3D%22%22%3E%20...%20%3C/div%3E%0A%20%20%20%20%3E%20%3Cdiv%20id%3D%22root%22%20class%3D%22devtools-monospace%22%3E%3C/div%3E%0A%20%20%20_%7C%20%3Cdiv%20style%3D%22display%3Anone%3B%22%3E%0A%20%20%20%20%20%3E%20%3Cdiv%20id%3D%22templateRoot%22%3E%0A%20%20%20%20%20%20%20%20%3Cxul%3Ahbox%20class%3D%22devtools-toolbar%22%20flex%3D%221%22%20align%3D%22center%22%3E%0A%20%20%20%20%20%20%20%20%20%20%3Cxul%3Acheckbox%20class%3D%22includebrowserstyles%22/%3E%0A%20%20%20%20%20%20%20%20%20%20%3Cxul%3Atextbox%20class%3D%22devtools-searchinput%22%20type%3D%22search%22/%3E%0A%20%20%20%20%20%20%20%20%3C/xul%3Ahbox%3E%0A%20%20%20%20%20%20%3C/div%3E</text>
+      </controlProperties>
+    </control>
+    <control controlID="26" controlTypeID="com.balsamiq.mockups::TabBar" x="514" y="841" w="272" h="510" measuredW="295" measuredH="100" zOrder="16" locked="false" isInGroup="-1">
+      <controlProperties>
+        <selectedIndex>0</selectedIndex>
+        <text>Rules%2C%20Computed%2C%20Fonts%2C%20Box%20Model</text>
+      </controlProperties>
+    </control>
+    <control controlID="27" controlTypeID="com.balsamiq.mockups::ModalScreen" x="180" y="960" w="334" h="35" measuredW="320" measuredH="240" zOrder="17" locked="false" isInGroup="-1"/>
+    <control controlID="28" controlTypeID="com.balsamiq.mockups::TabBar" x="144" y="2699" w="642" h="540" measuredW="325" measuredH="100" zOrder="18" locked="false" isInGroup="-1">
+      <controlProperties>
+        <selectedIndex>2</selectedIndex>
+        <text>%u274B%2C%20Terminal%2C%20Sources%2C%20Debugger%2C%20Profiler</text>
+      </controlProperties>
+    </control>
+    <control controlID="29" controlTypeID="com.balsamiq.mockups::MenuBar" x="144" y="3210" w="169" h="29" measuredW="136" measuredH="29" zOrder="19" locked="false" isInGroup="-1">
+      <controlProperties>
+        <text>New%2C%20Import...</text>
+      </controlProperties>
+    </control>
+    <control controlID="30" controlTypeID="com.balsamiq.mockups::Menu" x="144" y="2747" w="169" h="-1" measuredW="150" measuredH="240" zOrder="20" locked="false" isInGroup="-1">
+      <controlProperties>
+        <text>%20*index.html*%0A5474%20nodes%2CSave%0A---%0Ao%20*style.css*%0A432%20rules%2CSave%0A---%0Ao%20*more.css*%0A71%20rules%2C%20Save%0A---%0Ao%20*evenmore.css*%0A1243%20rules%2C%20Save%0A---%0A%20*actions.js*%0A234%20functions%2C%20Save</text>
+      </controlProperties>
+    </control>
+    <control controlID="31" controlTypeID="com.balsamiq.mockups::HSplitter" x="311" y="2747" w="-1" h="492" measuredW="11" measuredH="100" zOrder="21" locked="false" isInGroup="-1"/>
+    <control controlID="33" controlTypeID="com.balsamiq.mockups::ModalScreen" x="144" y="2794" w="169" h="50" measuredW="320" measuredH="240" zOrder="22" locked="false" isInGroup="-1"/>
+    <control controlID="35" controlTypeID="com.balsamiq.mockups::MenuBar" x="144" y="2722" w="642" h="29" measuredW="366" measuredH="29" zOrder="23" locked="false" isInGroup="-1">
+      <controlProperties>
+        <text>%5C%5B%5C%5C%5D%2C%20%3C%2C%20div%2C%20div%2C%20table%2C%20tr%2C%20td%2C%20span%2C%20%3E</text>
+      </controlProperties>
+    </control>
+    <control controlID="36" controlTypeID="com.balsamiq.mockups::Paragraph" x="321" y="2749" w="464" h="489" measuredW="200" measuredH="80" zOrder="24" locked="false" isInGroup="-1">
+      <controlProperties>
+        <text>/*%20This%20Source%20Code%20Form%20is%20subject%20to%20the%20terms%20of%20the%20Mozilla%20Public%0A%20*%20License%2C%20v.%202.0.%20If%20a%20copy%20of%20the%20MPL%20was%20not%20distributed%20with%20this%0A%20*%20file%2C%20You%20can%20obtain%20one%20at%20http%3A//mozilla.org/MPL/2.0/.%20*/%0A%20%0A.devtools-tab%20%3E%20.radio-check%2C%0A.devtools-tab%20%3E%20.radio-check-box1%2C%0A.devtools-tab%20%3E%20.radio-spacer-box%20%7B%0A%20%20display%3A%20none%3B%0A%7D%0A%20%0A%23toolbox-controls%20%3E%20toolbarbutton%20%3E%20.toolbarbutton-text%2C%0A%23toolbox-dock-buttons%20%3E%20toolbarbutton%20%3E%20.toolbarbutton-text%2C%0A.command-button%20%3E%20.toolbarbutton-text%20%7B%0A%20%20display%3A%20none%3B%0A%7D%0A%20%0A%23options-panel-container%20%7B%0A%20%20overflow%3A%20auto%3B%0A%7D%0A%20%0A%23options-panel%20%7B%0A%20%20overflow-y%3A%20auto%3B%0A%20%20display%3A%20block%3B%0A%7D%0A%20%0A.options-vertical-pane%20%7B%0A%20%20display%3A%20inline%3B%0A%20%20float%3A%20left%3B%0A%7D%0A%20%0A.options-vertical-pane%20%3E%20label%20%7B%0A%20%20display%3A%20block%3B%0A%7D</text>
+      </controlProperties>
+    </control>
+    <control controlID="37" controlTypeID="com.balsamiq.mockups::TabBar" x="601" y="2726" w="185" h="513" measuredW="259" measuredH="100" zOrder="25" locked="false" isInGroup="-1">
+      <controlProperties>
+        <selectedIndex>0</selectedIndex>
+        <text>Computed%2C%20Fonts%2C%20Box%20Model</text>
+      </controlProperties>
+    </control>
+    <control controlID="38" controlTypeID="com.balsamiq.mockups::TabBar" x="144" y="3378" w="642" h="540" measuredW="265" measuredH="100" zOrder="26" locked="false" isInGroup="-1">
+      <controlProperties>
+        <selectedIndex>2</selectedIndex>
+        <text>%u274B%2C%20Terminal%2C%20Sources%2C%20Profiler</text>
+      </controlProperties>
+    </control>
+    <control controlID="40" controlTypeID="com.balsamiq.mockups::Menu" x="144" y="3426" w="169" h="-1" measuredW="150" measuredH="240" zOrder="27" locked="false" isInGroup="-1">
+      <controlProperties>
+        <text>%20*index.html*%0A5474%20nodes%2CSave%0A---%0Ao%20*style.css*%0A432%20rules%2CSave%0A---%0Ao%20*more.css*%0A71%20rules%2C%20Save%0A---%0Ao%20*evenmore.css*%0A1243%20rules%2C%20Save%0A---%0A%20*actions.js*%0A234%20functions%2C%20Save</text>
+      </controlProperties>
+    </control>
+    <control controlID="41" controlTypeID="com.balsamiq.mockups::HSplitter" x="311" y="3426" w="-1" h="492" measuredW="11" measuredH="100" zOrder="28" locked="false" isInGroup="-1"/>
+    <control controlID="42" controlTypeID="com.balsamiq.mockups::ModalScreen" x="144" y="3616" w="169" h="50" measuredW="320" measuredH="240" zOrder="29" locked="false" isInGroup="-1"/>
+    <control controlID="43" controlTypeID="com.balsamiq.mockups::MenuBar" x="144" y="3401" w="642" h="29" measuredW="439" measuredH="29" zOrder="30" locked="false" isInGroup="-1">
+      <controlProperties>
+        <text>Run%2C%20Over%2C%20In%2C%20Out%2C%20%3C%2C%20stack%28%29%2C%20trace%28%29%2C%20here%28%29%2C%20%3E</text>
+      </controlProperties>
+    </control>
+    <control controlID="44" controlTypeID="com.balsamiq.mockups::Paragraph" x="321" y="3428" w="464" h="489" measuredW="200" measuredH="80" zOrder="31" locked="false" isInGroup="-1">
+      <controlProperties>
+        <text>/*%20This%20Source%20Code%20Form%20is%20subject%20to%20the%20terms%20of%20the%20Mozilla%20Public%0A%20*%20License%2C%20v.%202.0.%20If%20a%20copy%20of%20the%20MPL%20was%20not%20distributed%20with%20this%0A%20*%20file%2C%20You%20can%20obtain%20one%20at%20http%3A//mozilla.org/MPL/2.0/.%20*/%0A%20%0A.devtools-tab%20%3E%20.radio-check%2C%0A.devtools-tab%20%3E%20.radio-check-box1%2C%0A.devtools-tab%20%3E%20.radio-spacer-box%20%7B%0A%20%20display%3A%20none%3B%0A%7D%0A%20%0A%23toolbox-controls%20%3E%20toolbarbutton%20%3E%20.toolbarbutton-text%2C%0A%23toolbox-dock-buttons%20%3E%20toolbarbutton%20%3E%20.toolbarbutton-text%2C%0A.command-button%20%3E%20.toolbarbutton-text%20%7B%0A%20%20display%3A%20none%3B%0A%7D%0A%20%0A%23options-panel-container%20%7B%0A%20%20overflow%3A%20auto%3B%0A%7D%0A%20%0A%23options-panel%20%7B%0A%20%20overflow-y%3A%20auto%3B%0A%20%20display%3A%20block%3B%0A%7D%0A%20%0A.options-vertical-pane%20%7B%0A%20%20display%3A%20inline%3B%0A%20%20float%3A%20left%3B%0A%7D%0A%20%0A.options-vertical-pane%20%3E%20label%20%7B%0A%20%20display%3A%20block%3B%0A%7D</text>
+      </controlProperties>
+    </control>
+    <control controlID="46" controlTypeID="com.balsamiq.mockups::List" x="624" y="3428" w="162" h="490" measuredW="100" measuredH="126" zOrder="32" locked="false" isInGroup="-1">
+      <controlProperties>
+        <text>Current%20Debugger%0Aside%20panel</text>
+      </controlProperties>
+    </control>
+    <control controlID="47" controlTypeID="com.balsamiq.mockups::TabBar" x="144" y="2043" w="642" h="540" measuredW="325" measuredH="100" zOrder="33" locked="false" isInGroup="-1">
+      <controlProperties>
+        <selectedIndex>2</selectedIndex>
+        <text>%u274B%2C%20Terminal%2C%20Sources%2C%20Debugger%2C%20Profiler</text>
+      </controlProperties>
+    </control>
+    <control controlID="48" controlTypeID="com.balsamiq.mockups::MenuBar" x="144" y="2554" w="169" h="29" measuredW="136" measuredH="29" zOrder="34" locked="false" isInGroup="-1">
+      <controlProperties>
+        <text>New%2C%20Import...</text>
+      </controlProperties>
+    </control>
+    <control controlID="49" controlTypeID="com.balsamiq.mockups::Menu" x="144" y="2091" w="169" h="-1" measuredW="150" measuredH="282" zOrder="35" locked="false" isInGroup="-1">
+      <controlProperties>
+        <text>%20*index.html*%0ADOM%0Ax%20HTML%0A5474%20nodes%2CSave%0A---%0Ao%20*style.css*%0A432%20rules%2CSave%0A---%0Ao%20*more.css*%0A71%20rules%2C%20Save%0A---%0Ao%20*evenmore.css*%0A1243%20rules%2C%20Save%0A---%0A%20*actions.js*%0A234%20functions%2C%20Save</text>
+      </controlProperties>
+    </control>
+    <control controlID="50" controlTypeID="com.balsamiq.mockups::HSplitter" x="311" y="2091" w="-1" h="492" measuredW="11" measuredH="100" zOrder="36" locked="false" isInGroup="-1"/>
+    <control controlID="51" controlTypeID="com.balsamiq.mockups::ModalScreen" x="144" y="2091" w="169" h="90" measuredW="320" measuredH="240" zOrder="37" locked="false" isInGroup="-1"/>
+    <control controlID="52" controlTypeID="com.balsamiq.mockups::MenuBar" x="144" y="2066" w="642" h="29" measuredW="366" measuredH="29" zOrder="38" locked="false" isInGroup="-1">
+      <controlProperties>
+        <text>%5C%5B%5C%5C%5D%2C%20%3C%2C%20div%2C%20div%2C%20table%2C%20tr%2C%20td%2C%20span%2C%20%3E</text>
+      </controlProperties>
+    </control>
+    <control controlID="53" controlTypeID="com.balsamiq.mockups::Paragraph" x="322" y="2095" w="464" h="488" measuredW="200" measuredH="80" zOrder="39" locked="false" isInGroup="-1">
+      <controlProperties>
+        <text>%20%20%20%20%3C%21--%20The%20output%20from%20%23templateProperty%20%28below%29%20is%20appended%20here.%20--%3E%0A%20%20%20%20%3Cdiv%20id%3D%22propertyContainer%22%20class%3D%22devtools-monospace%22%3E%0A%20%20%20%20%3C/div%3E%0A%20%0A%20%20%20%20%3C%21--%20When%20no%20properties%20are%20found%20the%20following%20block%20is%20displayed.%20--%3E%0A%20%20%20%20%3Cdiv%20id%3D%22noResults%22%20hidden%3D%22%22%3E%0A%20%20%20%20%20%20%26noPropertiesFound%3B%0A%20%20%20%20%3C/div%3E%0A%20%0A%20%20%20%20%3C%21--%20The%20output%20from%20%23templateRoot%20%28below%29%20is%20inserted%20here.%20--%3E%0A%20%20%20%20%3Cdiv%20id%3D%22root%22%20class%3D%22devtools-monospace%22%3E%3C/div%3E%0A%20%0A%20%20%20%20%3C%21--%0A%20%20%20%20To%20visually%20debug%20the%20templates%20without%20running%20firefox%2C%20alter%20the%20display%3Anone%0A%20%20%20%20--%3E%0A%20%20%20%20%3Cdiv%20style%3D%22display%3Anone%3B%22%3E%0A%20%20%20%20%20%20%3C%21--%0A%20%20%20%20%20%20templateRoot%20sits%20at%20the%20top%20of%20the%20window%20and%20contains%20the%20%22include%20default%0A%20%20%20%20%20%20styles%22%20checkbox.%20For%20data%20it%20needs%20an%20instance%20of%20CssHtmlTree.%0A%20%20%20%20%20%20--%3E%0A%20%20%20%20%20%20%3Cdiv%20id%3D%22templateRoot%22%3E%0A%20%20%20%20%20%20%20%20%3Cxul%3Ahbox%20class%3D%22devtools-toolbar%22%20flex%3D%221%22%20align%3D%22center%22%3E%0A%20%20%20%20%20%20%20%20%20%20%3Cxul%3Acheckbox%20class%3D%22includebrowserstyles%22%0A%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20save%3D%22%24%7BincludeBrowserStylesCheckbox%7D%22%0A%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20oncommand%3D%22%24%7BincludeBrowserStylesChanged%7D%22%20checked%3D%22false%22%0A%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20label%3D%22%26browserStylesLabel%3B%22/%3E%0A%20%20%20%20%20%20%20%20%20%20%3Cxul%3Atextbox%20class%3D%22devtools-searchinput%22%20type%3D%22search%22%20save%3D%22%24%7BsearchField%7D%22%0A%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20placeholder%3D%22%26userStylesSearch%3B%22%20flex%3D%221%22%0A%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20oncommand%3D%22%24%7BfilterChanged%7D%22/%3E%0A%20%20%20%20%20%20%20%20%3C/xul%3Ahbox%3E%0A%20%20%20%20%20%20%3C/div%3E%0A%20%0A%20%0A%20%20%20%20%20%20%3C%21--%0A%20%20%20%20%20%20A%20templateMatchedSelectors%20sits%20inside%20each%20templateProperties%20showing%20the%0A%20%20%20%20%20%20list%20of%20selectors%20that%20affect%20that%20property.%20Each%20needs%20data%20like%20this%3A%0A%20%20%20%20%20%20%7B%0A%20%20%20%20%20%20%20%20matchedSelectorViews%3A%20...%2C%20//%20from%20cssHtmlTree.propertyViews%5Bname%5D.matchedSelectorViews%0A%20%20%20%20%20%20%7D%0A%20%20%20%20%20%20This%20is%20a%20template%20so%20the%20parent%20does%20not%20need%20to%20be%20a%20table%2C%20except%20that%0A%20%20%20%20%20%20using%20a%20div%20as%20the%20parent%20causes%20the%20DOM%20to%20muck%20with%20the%20tr%20elements%0A%20%20%20%20%20%20--%3E%0A%20%20%20%20%20%20%3Cdiv%20id%3D%22templateMatchedSelectors%22%3E%0A%20%20%20%20%20%20%20%20%3Cloop%20foreach%3D%22selector%20in%20%24%7BmatchedSelectorViews%7D%22%3E%0A%20%20%20%20%20%20%20%20%20%20%3Cp%3E%0A%20%20%20%20%20%20%20%20%20%20%20%20%3Cspan%20class%3D%22rule-link%22%3E%0A%20%20%20%20%20%20%20%20%20%20%20%20%20%20%3Ca%20target%3D%22_blank%22%20class%3D%22link%20theme-link%22%0A%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20onclick%3D%22%24%7Bselector.openStyleEditor%7D%22%0A%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20onkeydown%3D%22%24%7Bselector.maybeOpenStyleEditor%7D%22%0A%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20title%3D%22%24%7Bselector.selectorInfo.href%7D%22%0A%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20tabindex%3D%220%22%3E%24%7Bselector.selectorInfo.source%7D%3C/a%3E%0A%20%20%20%20%20%20%20%20%20%20%20%20%3C/span%3E%0A%20%20%20%20%20%20%20%20%20%20%20%20%3Cspan%20dir%3D%22ltr%22%20class%3D%22rule-text%20%24%7Bselector.statusClass%7D%20theme-fg-color3%22%20title%3D%22%24%7Bselector.statusText%7D%22%3E%0A%20%20%20%20%20%20%20%20%20%20%20%20%20%20%24%7Bselector.text%28__element%29%7D%0A%20%20%20%20%20%20%20%20%20%20%20%20%20%20%3Cspan%20class%3D%22other-property-value%20theme-fg-color1%22%3E%24%7Bselector.selectorInfo.value%7D%3C/span%3E%0A%20%20%20%20%20%20%20%20%20%20%20%20%3C/span%3E%0A%20%20%20%20%20%20%20%20%20%20%3C/p%3E%0A%20%20%20%20%20%20%20%20%3C/loop%3E%0A%20%20%20%20%20%20%3C/div%3E%0A%20%20%20%20%3C/div%3E%0A%20%0A%20%20%3C/body%3E%0A%3C/html%3E</text>
+      </controlProperties>
+    </control>
+    <control controlID="54" controlTypeID="com.balsamiq.mockups::TabBar" x="601" y="2070" w="185" h="513" measuredW="259" measuredH="100" zOrder="40" locked="false" isInGroup="-1">
+      <controlProperties>
+        <selectedIndex>0</selectedIndex>
+        <text>Computed%2C%20Fonts%2C%20Box%20Model</text>
+      </controlProperties>
+    </control>
+  </controls>
+</mockup>
