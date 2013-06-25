@@ -5,10 +5,12 @@
 
 There's a lot here. So lets start with a TL;DR.
 
-* Live editing rocks
-* Creating a 'sources' panel that beings together HTML/JS/CSS is a good goal
-* But it's a long term goal. In the short term we want to add live HTML editing
-  to the Style Editor Panel
+* Live editing rocks. We should do more.
+* There are interactions between our panels that might make combining the
+  Inspector, Debugger and Style Editor panels into a single 3-column 'Sources'
+  panel sensible.
+* But in the short term for live-editing of HTML, we're going to beef up the
+  Style Editor panel to enable HTML editing.
 
 ## Where we are now
 
@@ -20,21 +22,19 @@ We have:
 
 Stuff we'd like to polish:
 
-* CSS: Syncing changes from rule view to style editor, integration with
-  highlighter, improved save experience
-* HTML: Drag and drop editing
-* JavaScript: Rationalizing the number of input areas
+* CSS: We should have better syncing of changes from rule view to style editor,
+  integration with the highlighter, and an improved save experience
+* HTML: Drag and drop editing is currently missing
+* JavaScript: Rationalizing the number of input areas a.k.a JSTerm
 
 Beyond this - we'd like to be able to live-edit HTML, CSS and JavaScript in
-Firefox. This document is about how we get there.
+Firefox.
 
-Before we talk UI, we need to break out some tech first.
+This document is about how we get there.
 
 One of the problems of web development (maybe even *the* problem) is that
-browsers are a black box for most web developers. There are WAT moments for
-[HTML](http://jakearchibald.github.io/request-quest/),
-[CSS](https://twitter.com/slicknet/status/9789299977) and
-(obviously) [JS](https://www.destroyallsoftware.com/talks/wat).
+browsers are a black box for most web developers, and too often development
+happens by someone wildly randomly twiddling CSS and HTML until it looks right.
 
 It would be good to be able to start with the users mental model for how
 browsers work, but average-Joe developer's mental model of the web is generally
@@ -50,7 +50,12 @@ that we're not interested in solving right now:
 * Talking to databases
 * Uploading resources to a web-server
 
+It would be nice for us to support browser development. It's a fairly short
+journey from HTML to XHTML to XUL but that's a side goal rather than a day 1
+thing.
+
 We may, by being good at editing HTML/JS/CSS also end up being good at NodeJS
+but that's by chance.
 
 ## Complexities of Authoring
 
@@ -58,9 +63,10 @@ There are a number of ways in which live-editing isn't simple. For each of
 HTML/CSS/JS it comes down to 2 issues:
 
 * The 'internal wiring' problem of keeping in sync with post-authoring changes.
-i.e getting notified, and making sure the right parts know of changes
-* The wiring problem is compounded by irreversible/lossy transformations from
-the authored text (making it hard to compare current and authored state)
+  i.e getting notified, and making sure the right parts know of changes
+* The 'transform' problem which compounds the wiring problem by irreversible
+  or lossy transformations from the authored text (making it hard to compare
+  current and authored state)
 
 ### CSS
 
@@ -68,7 +74,7 @@ These problems manifest themselves in CSS as follows:
 
 * We need to keep the various inspectors and editors in sync with each other
 * CSS parsing typically strips out syntactically incorrect CSS, which we want
-to present to the user
+  to present to the user
 
 ### JavaScript
 
@@ -130,7 +136,9 @@ algorithm to port changes between DOM trees.
 7. We can then attempt to apply the same set of changes to the DOM created from
    the network HTML to allow 'save to disk' to work
 
-I believe Adobe is working on this with [Brackets](http://download.brackets.io/)
+Fitzgen has done [work on diffing DOM trees](https://github.com/fitzgen/shabu)
+and Adobe is working on this with [Brackets](http://download.brackets.io/) -
+(see the [ResearchLiveHTML branch](https://github.com/adobe/brackets/compare/ResearchLiveHTML))
 
 ## User Interface
 
@@ -143,16 +151,16 @@ Here's our best live-edit panel so far:
 
 No shocks there.
 
-I suggested that we markup the markup panel to show DOM elements that have
+I suggested that we markup the markup panel could show DOM elements that have
 changed since loading as a step on the road to live-HTML-editing.
 
-So here's a mockup of the markup on the markup panel:
+Here's a (really bad) mockup of the markup on the markup panel:
 
 ![Markup Markup](markup-markup.png)
 
 Probably no shocks there either.
 
-So how do we actually do live editing of HTML?
+### So how do we actually do live editing of HTML?
 
 The obvious and simple thing is to upgrade the Style Editor panel with HTML
 sources.
@@ -165,8 +173,7 @@ should let us edit any file on the filesystem so long as it's plain text.
 I also added a JavaScript source here, not because we're doing live-editing of
 JavaScript, but because the ability to edit your sites JavaScript from within
 this Editor pane would be useful. In fact it would be annoying to not be able
-to do that. We just need to make sure people don't expect live-editing and
-we're OK.
+to do that. We need to make sure people don't expect live-editing.
 
 We've talked lots about integrating the highlighter and the Style Editor. In
 fact being able to see things like the Font View and the Box Model while you
@@ -188,7 +195,7 @@ We have a 3 column view here:
 Also there is a navigation bar at the top which shows you where you are right
 now.
 
-So here's the thing - that's exactly the layout of the Debugger panel.
+This is exactly the layout of the Debugger panel.
 
 So we might be able to have a single 'Sources' panel that lets us keep all of
 our sources in one place.
