@@ -1,16 +1,20 @@
 
 # Resource Map
 
-## TL;DR
+### TL;DR
 
 Resourcemaps are like sourcemaps but targeting a set of resources like a
 website, allowing authoring tools to save modified sources read from HTTP.
 
 In the short term with Firefox we will probably only consider a single mapping
 with a filesystem backend; just enough for the trivial static website case.
-This document goes further to make sure we're headed in the right direction.
+i.e.
 
-## What is the point?
+    { urlPath: '/', dir: '/projects/example' }
+
+This document also discusses future direction.
+
+### What is the point?
 
 We should have something like [sourcemaps](SM) but that handles the resources
 in a website rather than just for a single source file.
@@ -33,6 +37,20 @@ The principle consumers of resourcemap files will be authoring tools that want
 to allow altered web resources to be saved back to their original positions.
 
 [SM]: https://docs.google.com/document/d/1U1RGAehQwRypUTovF1KRlpiOFze0b-_2gc6fAH0KY0k/edit?hl=en_US&pli=1&pli=1
+
+### Why in a file?
+
+Chrome uses an internal configuration to map a URL to a filesystem location.
+So why use a file?
+
+First; we're not really talking about a file - this is about a URL (which could
+be read from a file). So why a URL?
+
+* The user has already created entered the data behind the resourcemap file in
+  order to start the web server. Allowing web servers to automatically generate
+  the resourcemap file means zero extra manual intervention.
+* Using a URL allows the configuration to be shared between a number of
+  authoring tools, rather than re-created in each.
 
 ## Requirements
 
@@ -131,12 +149,12 @@ The resourcemap file is a JSON format file that contains an array of mappings.
 Each mapping is a URL-prefix to file-system prefix mapping. If there is only
 one mapping, then the containing ``[]`` can be omitted.
 
-## Examples
+### Examples
 
 Except where stated otherwise, these examples use a website that is served from
 ``http://localhost:8000/``, and stored on disk at ``/projects/example``.
 
-### Static project
+#### Static project
 
 When the webserver simply serves the files from the current directory (i.e.
 ``python -m SimpleHTTPServer``) then ``http://localhost:8000/resourcemap.json``
@@ -156,7 +174,7 @@ When on Windows, the file would look more like:
 
 And will require the authoring tool to map ``\`` to ``/``.
 
-### Larger static project
+#### Larger static project
 
 Sometimes a static project may be arranged in a non-obvious way. Perhaps CSS
 files are read from a directory with a different mapping.
@@ -170,7 +188,7 @@ The authoring tool should read through the mappings finding the first matching
 mapping and using the associated directory, moving onto subsequent matching
 mappings if the resource is not found in the associated directory.
 
-### Static project with SASS/Traceur/Closure
+#### Static project with SASS/Traceur/Closure
 
 There is ``sass --watch``, but there are cases where the build step if fired
 off manually.
@@ -187,7 +205,7 @@ The ``post`` action is a literal string which is passed to a shell
 It should be noted that this solution sucks planets out of orbit. Suggestions
 for solutions which disrupt our solar system less would be appreciated.
 
-### PHP project
+#### PHP project
 
 Simples:
 
@@ -216,6 +234,10 @@ up to date and correctly configured).
 In order to save to a non-local filesystem we could do:
 
     { urlPath: '/', ssh: 'joe@example.com:/var/srv/www' }
+
+Or, perhaps webservers might like to suggest something like:
+
+    { urlPath: '/', webdav: '/' }
 
 Or:
 
