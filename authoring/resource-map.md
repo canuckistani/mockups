@@ -4,7 +4,7 @@
 ### TL;DR
 
 Resourcemaps are like sourcemaps but mapping a large set of resources with a
-statement like "Stuff from this URL is stored in that directory". It's purpose
+statement like "Stuff from this URL is stored in that directory". Its purpose
 is to allow authoring tools to save modified sources read from HTTP.
 
 This document talks about a number of cases, but in the short term with Firefox
