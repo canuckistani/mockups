@@ -3,16 +3,15 @@
 
 ### TL;DR
 
-Resourcemaps are like sourcemaps but targeting a set of resources like a
-website, allowing authoring tools to save modified sources read from HTTP.
+Resourcemaps are like sourcemaps but mapping a large set of resources with a
+statement like "Stuff from this URL is stored in that directory". It's purpose
+is to allow authoring tools to save modified sources read from HTTP.
 
-In the short term with Firefox we will probably only consider a single mapping
-with a filesystem backend; just enough for the trivial static website case.
-i.e.
+This document talks about a number of cases, but in the short term with Firefox
+we will probably only consider a single mapping with a filesystem backend;
+just enough for the trivial static website case. i.e.
 
     { urlPath: '/', dir: '/projects/example' }
-
-This document also discusses future direction.
 
 ### What is the point?
 
@@ -255,6 +254,5 @@ urlPath to a directory in the local filesystem. i.e this case:
     { urlPath: '/', dir: '/projects/example' }
 
 I'd really like to use ``urlPathPrefix`` in place of ``urlPath`` but that's
-quite verbose.
-It's certainly not a full URL (which is more verbose and also fragile when the
-same host can be reached in more than one way)
+quite verbose. It's certainly not a full URL (which is more verbose and also
+fragile when the same host can be reached in more than one way)
