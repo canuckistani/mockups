@@ -15,13 +15,10 @@ just enough for the trivial static website case. i.e.
 
 ### What is the point?
 
-We should have something like [sourcemaps](SM) but that handles the resources
-in a website rather than just for a single source file.
-
 The point is to allow a mapping between the resources presented by a web server
 and writable versions of the same resources - probably on a local disk.
 
-With sourcemaps, a transformer (like a compiler, transpiler, compressor, etc)
+With [sourcemaps](SM), a transformer (like a compiler, transpiler, etc)
 can point to a file called a sourcemap which connects the final source to the
 original source.
 
@@ -30,7 +27,8 @@ a resourcemap which connects the final resources to the original resources.
 
 Sourcemap is a 1-to-many mapping system that converts URL→URL. Resourcemap is
 1-to-1 that converts URL→Writable-resource. Sourcemaps should be applied before
-resourcemaps.
+resourcemaps (although there could be a case for server-side sourcemaps for
+PHP, which would be applied afterwards).
 
 The principle consumers of resourcemap files will be authoring tools that want
 to allow altered web resources to be saved back to their original positions.
